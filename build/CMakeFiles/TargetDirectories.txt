@@ -1,0 +1,3 @@
+/home/kora/dev/raytracing-weekend/build/CMakeFiles/raytracer.dir
+/home/kora/dev/raytracing-weekend/build/CMakeFiles/edit_cache.dir
+/home/kora/dev/raytracing-weekend/build/CMakeFiles/rebuild_cache.dir
