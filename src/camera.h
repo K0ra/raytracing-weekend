@@ -37,7 +37,7 @@ class camera {
 
     void initialize() {
         // Calculate the image height, and ensure that it's at least 1.
-        int image_height = int(image_width / aspect_ratio);
+        image_height = int(image_width / aspect_ratio);
         image_height = (image_height < 1) ? 1 : image_height;
 
         center = point3(0, 0, 0);
@@ -51,8 +51,8 @@ class camera {
         auto viewport_v = vec3(0, -viewport_height, 0);
 
         // Calculate the horizontal and vertical delta vectors from pixel to pixel.
-        auto pixel_delta_u = viewport_u / image_width;
-        auto pixel_delta_v = viewport_v / image_height;
+        pixel_delta_u = viewport_u / image_width;
+        pixel_delta_v = viewport_v / image_height;
 
         // Calculate the location of the upper left pixel.
         auto viewport_upper_left = center - vec3(0, 0, focal_length) - viewport_u/2 - viewport_v/2;
@@ -62,7 +62,14 @@ class camera {
     color ray_color(const ray& r, const hittable& world) const {
         hit_record rec;
 
-        if (world.hit(r, interval(0, infinity), rec)) {
+        if (world.hit(r, interval(0.001, infinity), rec)) {
+            // DEBUG: Print hit information for first few rays
+            // static int hit_count = 0;
+            // if (hit_count++ < 10) {
+            //     std::clog << "HIT! t=" << rec.t 
+            //             << " point=(" << rec.p.e[0] << "," << rec.p.e[1] << "," << rec.p.e[2] << ")\n";
+            // }
+
             return 0.5 * (rec.normal + color(1, 1, 1));
         }
 
