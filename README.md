@@ -4,7 +4,7 @@ A simple CPU ray tracer written in C++, built as a hands-on exercise in renderin
 
 ## Overview
 
-This project follows *Ray Tracing in One Weekend* and implements a basic ray tracer from scratch, rendering scenes of spheres to a PPM image. The current implementation covers the core ray tracing pipeline through antialiasing.
+This project follows *Ray Tracing in One Weekend* and implements a basic ray tracer from scratch, rendering scenes of spheres to a PPM image. The current implementation covers the core ray tracing pipeline through diffuse materials and gamma correction.
 
 ## Implemented
 
@@ -16,6 +16,8 @@ This project follows *Ray Tracing in One Weekend* and implements a basic ray tra
 - A configurable camera responsible for scene rendering and image output
 - Color utilities for writing pixel data
 - Antialiasing via multi-sample pixel rendering
+- Diffuse materials with Lambertian reflection
+- Gamma correction (gamma = 2) for proper color display
 - Shared math/utility helpers (`rtweekend.h`)
 
 ## Project Structure
@@ -42,6 +44,6 @@ Based on *Ray Tracing in One Weekend* by Peter Shirley.
 
 ## Progress
 
-Current progress: ray tracing fundamentals through antialiasing.
+Current progress: ray tracing fundamentals through diffuse materials.
 
-Future chapters (diffuse materials, reflection/refraction, positionable camera, defocus blur, and beyond) will be added incrementally as the project develops.
+Future chapters (reflection/refraction, positionable camera, defocus blur, and beyond) will be added incrementally as the project develops.
